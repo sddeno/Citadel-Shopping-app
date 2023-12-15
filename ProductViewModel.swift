@@ -7,16 +7,49 @@
 
 import Foundation
 import FirebaseFirestore
-
+import Combine
 
 // get data from URL and then updlaod it to Firebase and get from firebase and display in SwiftUI
+
 @MainActor
 final class ProductViewModel: ObservableObject {
     
+    @Published private(set) var cartItemCount: Int = 0
     @Published private(set) var productArray: [Product] = []
     @Published var selectedFilter: FilterOption? = nil
     @Published var selectedCategory: CategoryOption? = nil
     private var lastDocument: DocumentSnapshot? = nil
+    
+    private var cancellable = Set<AnyCancellable>()
+    
+    
+    func addListenercartItemCount() {
+        Task {
+            guard let authDataResult = try? AuthenticationManager.shared.getAuthenticationUser() else { return }
+            
+            UserManger.shared.addAggregateCountListener(userId: authDataResult.uid)
+                .sink { _ in
+                    
+                } receiveValue: { returnedCount in
+                    self.cartItemCount = returnedCount
+                }
+                .store(in: &cancellable)
+
+        }
+    }
+    
+//    func cartCount() {
+//        Task {
+//            do {
+//                let authDataResult = try AuthenticationManager.shared.getAuthenticationUser()
+//
+//                let count = try await UserManger.shared.userCartCount(userId: authDataResult.uid)
+//                self.cartItemCount = count
+//            }catch {
+//                print("couldn't fetch auth user ")
+//            }
+//        }
+//    }
     
     // only wants to download once
     //    func downloadProductsAndUplaodToFirebase() {
@@ -187,6 +220,18 @@ final class ProductViewModel: ObservableObject {
                 
             }
         }
+    }
+    
+    func addProductToCart(productId: Int){
+        Task {
+            do {
+                let authDataResult = try AuthenticationManager.shared.getAuthenticationUser()
+                try? await UserManger.shared.addUserCartProduct(userId: authDataResult.uid, productId: productId)
+            }catch {
+                print("product not added to cart due to error : \(error)")
+            }
+        }
+
     }
     
 }

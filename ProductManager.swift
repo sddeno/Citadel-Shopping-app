@@ -43,31 +43,33 @@ struct Products: Codable {
 
 struct Product: Identifiable, Codable, Equatable {
     
-    var id                 : Int
-    var title              : String?   = nil
-    var description        : String?   = nil
-    var price              : Int?      = nil
-    var discountPercentage : Double?   = nil
-    var rating             : Double?   = nil
-    var stock              : Int?      = nil
-    var brand              : String?   = nil
-    var category           : String?   = nil
-    var thumbnail          : String?   = nil
-    var images             : [String]? = []
+    var id                      : Int
+    var title                   : String?   = nil
+    var description             : String?   = nil
+    var price                   : Int?      = nil
+    var discountPercentage      : Double?   = nil
+    var rating                  : Double?   = nil
+    var stock                   : Int?      = nil
+    var brand                   : String?   = nil
+    var category                : String?   = nil
+    var thumbnail               : String?   = nil
+    var images                  : [String]? = []
+    var multipleSelectionCount  : Int?      = nil
     
     enum CodingKeys: String, CodingKey {
         
-        case id                 = "id"
-        case title              = "title"
-        case description        = "description"
-        case price              = "price"
-        case discountPercentage = "discountPercentage"
-        case rating             = "rating"
-        case stock              = "stock"
-        case brand              = "brand"
-        case category           = "category"
-        case thumbnail          = "thumbnail"
-        case images             = "images"
+        case id                     = "id"
+        case title                  = "title"
+        case description            = "description"
+        case price                  = "price"
+        case discountPercentage     = "discountPercentage"
+        case rating                 = "rating"
+        case stock                  = "stock"
+        case brand                  = "brand"
+        case category               = "category"
+        case thumbnail              = "thumbnail"
+        case images                 = "images"
+        case multipleSelectionCount = "multipleSelectionCount"
         
     }
     
@@ -76,7 +78,7 @@ struct Product: Identifiable, Codable, Equatable {
         return lhs.id == rhs.id
     }
     
-    init(id: Int, title: String? = nil, description: String? = nil, price: Int? = nil, discountPercentage: Double? = nil, rating: Double? = nil, stock: Int? = nil, brand: String? = nil, category: String? = nil, thumbnail: String? = nil, images: [String]? = nil) {
+    init(id: Int, title: String? = nil, description: String? = nil, price: Int? = nil, discountPercentage: Double? = nil, rating: Double? = nil, stock: Int? = nil, brand: String? = nil, category: String? = nil, thumbnail: String? = nil, images: [String]? = nil, multipleSelectionCount: Int? = nil) {
         self.id = id
         self.title = title
         self.description = description
@@ -88,6 +90,7 @@ struct Product: Identifiable, Codable, Equatable {
         self.category = category
         self.thumbnail = thumbnail
         self.images = images
+        self.multipleSelectionCount = multipleSelectionCount
     }
     
     init(from decoder: Decoder) throws {
@@ -104,6 +107,7 @@ struct Product: Identifiable, Codable, Equatable {
         category           = try values.decodeIfPresent(String.self   , forKey: .category           )
         thumbnail          = try values.decodeIfPresent(String.self   , forKey: .thumbnail          )
         images             = try values.decodeIfPresent([String].self , forKey: .images             )
+        multipleSelectionCount = try values.decodeIfPresent(Int.self, forKey: .multipleSelectionCount)
         
     }
     
@@ -120,6 +124,7 @@ struct Product: Identifiable, Codable, Equatable {
         try container.encodeIfPresent(self.category, forKey: .category)
         try container.encodeIfPresent(self.thumbnail, forKey: .thumbnail)
         try container.encodeIfPresent(self.images, forKey: .images)
+        try container.encodeIfPresent(self.multipleSelectionCount, forKey: .multipleSelectionCount)
     }
 }
 

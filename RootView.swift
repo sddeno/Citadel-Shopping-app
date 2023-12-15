@@ -17,11 +17,11 @@ struct RootView: View {
             if !showSignInView {
                 NavigationStack{
 //                    ProductView()
-//                                        ProfileView(showSignInView: $showSignInView)
-                                        TabbarView(showSignInView: $showSignInView)
-                    //                    CrashView()
+//                    ProfileView(showSignInView: $showSignInView)
+                    TabbarView(showSignInView: $showSignInView)
+//                    CrashView()
+//                    PerformanceView()
                     
-                    //                    PerformanceView()                }
                 }
             }
         }

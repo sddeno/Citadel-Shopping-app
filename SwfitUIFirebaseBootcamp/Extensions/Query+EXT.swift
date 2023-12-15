@@ -63,6 +63,29 @@ extension Query {
         return Int(truncating: snapshot.count)
     }
     
+    func addAggregateCountListener() -> (AnyPublisher<Int, Error> ,ListenerRegistration) {
+//        Task{
+//            do {
+//                let snapshot = try await self.count.getAggregation(source: .server)
+//            }catch {
+//
+//            }
+//        }
+        
+        let publisher = PassthroughSubject<Int, Error>()
+
+        let listener = self.addSnapshotListener { querySnapshot, error in
+            guard let count = querySnapshot?.count else {
+                print("no count snapshot")
+                return
+            }
+            
+            publisher.send(count)
+        }
+        return (publisher.eraseToAnyPublisher(), listener)
+    }
+    
+    
     func addSnapshotListener<T: Decodable>(as type: T.Type) -> (AnyPublisher<[T], Error> , ListenerRegistration) {
         
         
@@ -79,7 +102,6 @@ extension Query {
          }
          
          return (publisher.eraseToAnyPublisher(), listener)
-        
         
     }
     

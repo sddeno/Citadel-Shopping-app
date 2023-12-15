@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProductListView: View {
-    
+    @StateObject private var viewModel = ProductViewModel()
     var product: Product
     
     var body: some View {
@@ -37,6 +37,17 @@ struct ProductListView: View {
             }
             .font(.callout)
             .foregroundColor(.secondary)
+            
+            
+            Button {
+                viewModel.addProductToCart(productId: product.id)
+            } label: {
+                Image("AddToCart")
+                    .resizable()
+                    .frame(width: 20, height: 20)
+                    .cornerRadius(90)
+                    .padding([.leading,.bottom])
+            }
         }
     }
 }
@@ -44,7 +55,6 @@ struct ProductListView: View {
 struct ProductListView_Previews: PreviewProvider {
     static var previews: some View {
         ProductListView(product: Product(
-            id: 1, title: "title", description: "description", price: 32, discountPercentage: 30, rating: 4, stock: 90, brand: "Samsung", category: "Phone", thumbnail: "", images: [])
-        )
+            id: 1, title: "title", description: "description", price: 32, discountPercentage: 30, rating: 4, stock: 90, brand: "Samsung", category: "Phone", thumbnail: "", images: []))
     }
 }

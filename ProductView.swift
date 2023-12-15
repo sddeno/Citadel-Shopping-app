@@ -10,7 +10,6 @@ import SwiftUI
 
 
 struct ProductView: View {
-    
     @StateObject private var viewModel = ProductViewModel()
     
     var body: some View {
@@ -25,7 +24,7 @@ struct ProductView: View {
             
             ForEach(viewModel.productArray, id: \.self.id) { product in
                 ProductListView(product: product)
-                    .contextMenu{
+                    .contextMenu {
                         Button("Add to Favorite"){
                             // add to favorite product list view
                             viewModel.addUserFavoriteProduct(productId: product.id)
@@ -43,8 +42,6 @@ struct ProductView: View {
         }
         .navigationBarTitle("Products")
         .toolbar() {
-            
-            
             ToolbarItem(placement: .navigationBarLeading){
                 Menu("Filter: \(viewModel.selectedFilter?.rawValue ?? "NONE")"){
                     ForEach(ProductViewModel.FilterOption.allCases, id: \.self) { filterOption in
@@ -68,12 +65,19 @@ struct ProductView: View {
                     }
                 }
             }
-            
-            
         }
+        .toolbar(content: {
+            NavigationLink {
+                CartView()
+            } label: {
+                CartButton(numberOfProducts: viewModel.cartItemCount)
+            }
+        })
         .padding(.horizontal,10)
         .task{
             viewModel.getAllProductsCount()
+//            viewModel.cartCount()
+            viewModel.addListenercartItemCount()
         }
     }
     

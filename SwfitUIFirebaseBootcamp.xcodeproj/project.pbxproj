@@ -24,6 +24,12 @@
 		8113EA722A322E3A00B7025A /* CrashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8113EA712A322E3A00B7025A /* CrashView.swift */; };
 		8113EA742A33368900B7025A /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 8113EA732A33368900B7025A /* FirebasePerformance */; };
 		8113EA772A3336FD00B7025A /* PerformanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8113EA762A3336FD00B7025A /* PerformanceView.swift */; };
+		812036AC2B286768007C8599 /* CartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812036AB2B286768007C8599 /* CartButton.swift */; };
+		812036AF2B29834E007C8599 /* CartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812036AE2B29834E007C8599 /* CartManager.swift */; };
+		812036B22B299535007C8599 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812036B12B299535007C8599 /* CartView.swift */; };
+		812036B52B299619007C8599 /* ProductRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812036B42B299619007C8599 /* ProductRow.swift */; };
+		812036B72B2AF056007C8599 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812036B62B2AF056007C8599 /* CartViewModel.swift */; };
+		812036B92B2AFCBA007C8599 /* ProductCartCellViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812036B82B2AFCBA007C8599 /* ProductCartCellViewBuilder.swift */; };
 		812123AC2A110AF1009528C2 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812123AB2A110AF1009528C2 /* RootView.swift */; };
 		8123F13D2A20E6EF004ADB46 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8123F13C2A20E6EF004ADB46 /* FirebaseFirestore */; };
 		8123F13F2A20E6EF004ADB46 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8123F13E2A20E6EF004ADB46 /* FirebaseFirestoreSwift */; };
@@ -65,6 +71,12 @@
 		8113EA692A30B09000B7025A /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		8113EA712A322E3A00B7025A /* CrashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashView.swift; sourceTree = "<group>"; };
 		8113EA762A3336FD00B7025A /* PerformanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceView.swift; sourceTree = "<group>"; };
+		812036AB2B286768007C8599 /* CartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartButton.swift; sourceTree = "<group>"; };
+		812036AE2B29834E007C8599 /* CartManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartManager.swift; sourceTree = "<group>"; };
+		812036B12B299535007C8599 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		812036B42B299619007C8599 /* ProductRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRow.swift; sourceTree = "<group>"; };
+		812036B62B2AF056007C8599 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		812036B82B2AFCBA007C8599 /* ProductCartCellViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCartCellViewBuilder.swift; sourceTree = "<group>"; };
 		812123AB2A110AF1009528C2 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		817CE55C2A10AC40005C42D7 /* SwfitUIFirebaseBootcamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwfitUIFirebaseBootcamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		817CE55F2A10AC40005C42D7 /* SwfitUIFirebaseBootcampApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwfitUIFirebaseBootcampApp.swift; sourceTree = "<group>"; };
@@ -192,6 +204,35 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		812036AD2B298338007C8599 /* ViewManagers */ = {
+			isa = PBXGroup;
+			children = (
+				812036AE2B29834E007C8599 /* CartManager.swift */,
+			);
+			name = ViewManagers;
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		812036B02B299504007C8599 /* CartView */ = {
+			isa = PBXGroup;
+			children = (
+				812036B12B299535007C8599 /* CartView.swift */,
+				812036B62B2AF056007C8599 /* CartViewModel.swift */,
+				812036B32B29960A007C8599 /* SubView */,
+			);
+			path = CartView;
+			sourceTree = "<group>";
+		};
+		812036B32B29960A007C8599 /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+				812036AB2B286768007C8599 /* CartButton.swift */,
+				812036B42B299619007C8599 /* ProductRow.swift */,
+				812036B82B2AFCBA007C8599 /* ProductCartCellViewBuilder.swift */,
+			);
+			name = SubView;
+			sourceTree = "<group>";
+		};
 		817CE5532A10AC40005C42D7 = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +257,7 @@
 				817CE55F2A10AC40005C42D7 /* SwfitUIFirebaseBootcampApp.swift */,
 				817CE5612A10AC40005C42D7 /* ContentView.swift */,
 				8113EA5C2A2F557F00B7025A /* Compoenents */,
+				812036AD2B298338007C8599 /* ViewManagers */,
 				8113EA592A2F551D00B7025A /* Extensions */,
 				81BE015C2A20F46A000D0F09 /* Core */,
 				81FD8B3F2A1278E40059920B /* Utilities */,
@@ -261,6 +303,7 @@
 				812123AB2A110AF1009528C2 /* RootView.swift */,
 				81BE01602A20F4F6000D0F09 /* Authentication */,
 				8113EA512A2A2FAA00B7025A /* Tabbar */,
+				812036B02B299504007C8599 /* CartView */,
 				81012DC92A2648050041939B /* Product */,
 				8113EA542A2DB1AD00B7025A /* FavoriteView */,
 				81BE01662A20F583000D0F09 /* Profile */,
@@ -439,9 +482,12 @@
 				8113EA532A2A2FBB00B7025A /* TabbarView.swift in Sources */,
 				8113EA682A30AB7900B7025A /* StorageManager.swift in Sources */,
 				81FD8B382A1226230059920B /* SettingsView.swift in Sources */,
+				812036B52B299619007C8599 /* ProductRow.swift in Sources */,
 				81BE01682A20F59F000D0F09 /* ProfileView.swift in Sources */,
 				8113EA612A2F564B00B7025A /* FavoriteViewModel.swift in Sources */,
 				81BE016B2A20FF13000D0F09 /* UserManager.swift in Sources */,
+				812036B22B299535007C8599 /* CartView.swift in Sources */,
+				812036AC2B286768007C8599 /* CartButton.swift in Sources */,
 				817CE5622A10AC40005C42D7 /* ContentView.swift in Sources */,
 				817CE5602A10AC40005C42D7 /* SwfitUIFirebaseBootcampApp.swift in Sources */,
 				8113EA772A3336FD00B7025A /* PerformanceView.swift in Sources */,
@@ -453,12 +499,15 @@
 				81FD8B432A1377230059920B /* SignInGoogleHelper.swift in Sources */,
 				81BE015F2A20F4DD000D0F09 /* SettingsViewModel.swift in Sources */,
 				8113EA632A2F569700B7025A /* ProductViewModel.swift in Sources */,
+				812036B72B2AF056007C8599 /* CartViewModel.swift in Sources */,
 				81012DC82A2647FC0041939B /* ProductView.swift in Sources */,
 				81012DCB2A2649630041939B /* ProductManager.swift in Sources */,
+				812036B92B2AFCBA007C8599 /* ProductCartCellViewBuilder.swift in Sources */,
 				817CE5792A10E31E005C42D7 /* AuthenticationView.swift in Sources */,
 				8113EA722A322E3A00B7025A /* CrashView.swift in Sources */,
 				818776682A10FCA300171EC9 /* AuthenticationManager.swift in Sources */,
 				810F29F92A2727F100CD8DB3 /* ProductListView.swift in Sources */,
+				812036AF2B29834E007C8599 /* CartManager.swift in Sources */,
 				81FD8B412A1278F20059920B /* Utilities.swift in Sources */,
 				8113EA5B2A2F555D00B7025A /* Query+EXT.swift in Sources */,
 				8113EA562A2DB20000B7025A /* FavoriteView.swift in Sources */,

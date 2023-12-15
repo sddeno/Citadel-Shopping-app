@@ -12,6 +12,7 @@ import Combine
 
 
 
+
 struct Movie : Codable { // we have to create coding keys for movie as well other wise it won't be able to encode and decode
     let id: String
     let title: String
@@ -133,19 +134,35 @@ final class UserManger {
     
     private let userCollection: CollectionReference = Firestore.firestore().collection("users")
     private var userFavoriteProductsListner: ListenerRegistration? = nil
+    private var userCartProductsListner: ListenerRegistration? = nil
+    private var aggregateCountListener: ListenerRegistration? = nil
     
+    // MARK: Firebase CollectionReference(User, Favorite, Cart) and their DocumentReference Methods
+    
+    // User Document Refernce
     private func userDocument(userId: String) -> DocumentReference {
         userCollection.document(userId)
     }
     
+    // Favourite Collection Refernce
     private func userFavoriteProductCollection(userId: String) -> CollectionReference {
         userDocument(userId: userId).collection("favorite_products")
     }
     
+    // Favorite Document Refernce
     private func userFavoriteProductDocument(userId: String, favoriteProductId: String) -> DocumentReference {
         userFavoriteProductCollection(userId: userId).document(favoriteProductId)
     }
     
+    // Cart Collection Refernce
+    private func userCartCollection(userId: String) -> CollectionReference {
+        userDocument(userId: userId).collection("Cart")
+    }
+    // Cart Document Refernce
+    private func userCartProductDocument(userId: String, CartProductId: String) -> DocumentReference {
+        userCartCollection(userId: userId).document(CartProductId)
+    }
+
     
     
     // no need of external encoder and decoder, we are gonna use coding keys for our custom key style, that's why commenting
@@ -162,7 +179,9 @@ final class UserManger {
         return decoder
     }()
      
-     
+    
+    
+    // MARK: - User Methods
     
     func createNewUser(user: DBUser) async throws {
         try userDocument(userId: user.userId).setData(from: user, merge: false) //, encoder: encoder)
@@ -269,6 +288,12 @@ final class UserManger {
         try await userDocument(userId: userId).updateData(data as [AnyHashable : Any]) // PATCH
     }
     
+    
+    
+    
+    
+    // MARK: + and - Favourite
+    
     func addUserFavoriteProduct(userId: String, productId: Int) async throws {
         
         let document = userFavoriteProductCollection(userId: userId).document() // blank document - document with auto id
@@ -286,7 +311,7 @@ final class UserManger {
     func removeUserFavoriteProduct(userId: String, favoriteProductId: String) async throws {
         try await userFavoriteProductDocument(userId: userId, favoriteProductId: favoriteProductId).delete()
     }
-    
+     
     func getAlluserFavoriteProducts(userId: String) async throws -> [UserFavoriteProduct] {
         try await userFavoriteProductCollection(userId: userId).getDocuments(as: UserFavoriteProduct.self)
     }
@@ -351,10 +376,79 @@ final class UserManger {
     }
     
     
+    
+    
+    
+    // MARK: + - Product to Cart
+    
+    func addUserCartProduct(userId: String, productId: Int) async throws {
+        let document = userCartCollection(userId: userId).document() // blank document - document with auto id
+        let documentId = document.documentID
+        
+        let data: [String: Any] = [
+            UserCartProduct.CodingKeys.id.rawValue : documentId,
+            UserCartProduct.CodingKeys.productId.rawValue : productId,
+            UserCartProduct.CodingKeys.dateCreated.rawValue : Timestamp()
+        ]
+        try await document.setData(data, merge: false)
+    }
+    
+    func removeUserCartProduct(userId: String, productId: String) async throws {
+        try await userCartProductDocument(userId: userId, CartProductId: productId).delete()
+    }
+    
+    func addListnerForAllUserCartProducts(userId: String) -> AnyPublisher<[UserCartProduct], Error> {
+        let (publisher, listener) = userCartCollection(userId: userId).addSnapshotListener(as: UserCartProduct.self)
+        
+        self.userCartProductsListner = listener
+        return publisher
+    }
+    
+    
+    
+    // MARK: Cart count
+    
+    func addAggregateCountListener(userId: String) -> AnyPublisher<Int, Error> {
+        let (publisher, listener) = userCartCollection(userId: userId).addAggregateCountListener()
+        self.aggregateCountListener = listener
+        return publisher
+    }
+    
+    func userCartCount(userId: String) async throws -> Int {
+        return try await userCartCollection(userId: userId).aggregateCount()
+    }
+    
 }
 
-
+// MARK: - Coable for Collection Favorite, Cart
 struct UserFavoriteProduct: Codable {
+    
+    let id: String
+    let productId: Int
+    let dateCreated: Date
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case productId = "product_id"
+        case dateCreated = "date_created"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = try container.decode(String.self, forKey: .id)
+        self.productId = try container.decode(Int.self, forKey: .productId)
+        self.dateCreated = try container.decode(Date.self, forKey: .dateCreated)
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(self.id, forKey: .id)
+        try container.encode(self.productId, forKey: .productId)
+        try container.encode(self.dateCreated, forKey: .dateCreated)
+    }
+}
+
+struct UserCartProduct: Codable {
     
     let id: String
     let productId: Int
