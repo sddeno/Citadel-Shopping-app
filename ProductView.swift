@@ -13,34 +13,28 @@ struct ProductView: View {
     @StateObject private var viewModel = ProductViewModel()
     
     var body: some View {
-        
-        List{
-            //            Button {
-            //                viewModel.getProductsByRating()
-            //            } label: {
-            //                Text("Get More Products")
-            //            }
-            
-            
-            ForEach(viewModel.productArray, id: \.self.id) { product in
-                ProductListView(product: product)
-                    .contextMenu {
-                        Button("Add to Favorite"){
-                            // add to favorite product list view
-                            viewModel.addUserFavoriteProduct(productId: product.id)
+        NavigationView {
+            List{
+                ForEach(viewModel.productArray, id: \.self.id) { product in
+                    ProductListView(product: product)
+                        .contextMenu {
+                            Button("Add to Favorite"){
+                                // add to favorite product list view
+                                viewModel.addUserFavoriteProduct(productId: product.id)
+                            }
                         }
+                    
+                    if product == viewModel.productArray.last {
+                        ProgressView()
+                            .onAppear(){
+                                print("fetching more PRODUCTS ::::")
+                                viewModel.getProducts()
+                            }
                     }
-                
-                if product == viewModel.productArray.last {
-                    ProgressView()
-                        .onAppear(){
-                            print("fetching more PRODUCTS ::::")
-                            viewModel.getProducts()
-                        }
                 }
             }
+            .navigationBarTitle("Citadel")
         }
-        .navigationBarTitle("Products")
         .toolbar() {
             ToolbarItem(placement: .navigationBarLeading){
                 
