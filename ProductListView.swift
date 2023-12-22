@@ -25,15 +25,15 @@ struct ProductListView: View {
             }
             
             VStack(alignment: .leading){
-                    Text(String(product.title ?? ""))
-                        .font(.headline)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.primary)
-                    
-                    Text("Price :" + String(product.price ?? 0))
-                    Text("Category :" + String(product.category ?? ""))
-                    Text("Brand: " + String(product.brand ?? ""))
-                    Text("Rating :" + String(product.rating ?? 4.0))
+                Text(String(product.title ?? ""))
+                    .font(.headline)
+                    .fontWeight(.semibold)
+                    .foregroundColor(.primary)
+                
+                Text("Price :" + String(product.price ?? 0))
+                Text("Category :" + String(product.category ?? ""))
+                Text("Brand: " + String(product.brand ?? ""))
+                Text("Rating :" + String(product.rating ?? 4.0))
             }
             .font(.callout)
             .foregroundColor(.secondary)

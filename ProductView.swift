@@ -43,6 +43,27 @@ struct ProductView: View {
         .navigationBarTitle("Products")
         .toolbar() {
             ToolbarItem(placement: .navigationBarLeading){
+                
+                Menu {
+                    ForEach(ProductViewModel.FilterOption.allCases, id: \.self) { filterOption in
+                        Button(filterOption.rawValue.capitalized) {
+                            Task{
+                                try? await viewModel.filterSelected(option:filterOption)
+                            }
+                        }
+                    }
+                } label: {
+                    Text("Filter : \(viewModel.selectedFilter?.rawValue ?? "NONE")")
+                        .bold()
+                        .foregroundColor(Color.primary)
+                        .padding(10)
+                        .background {
+                            Color.gray.opacity(0.5)
+                        }
+                        .cornerRadius(10)
+                }
+
+               /*
                 Menu("Filter: \(viewModel.selectedFilter?.rawValue ?? "NONE")"){
                     ForEach(ProductViewModel.FilterOption.allCases, id: \.self) { filterOption in
                         Button(filterOption.rawValue.capitalized) {
@@ -52,9 +73,31 @@ struct ProductView: View {
                         }
                     }
                 }
+                */
             }
             
             ToolbarItem(placement: .navigationBarTrailing){
+                
+                Menu {
+                    ForEach(ProductViewModel.CategoryOption.allCases, id: \.self) { option in
+                        Button(option.rawValue.capitalized) {
+                            Task{
+                                try? await viewModel.CategorySelected(option:option)
+                            }
+                        }
+                    }
+                } label: {
+                    Text("Filter : \(viewModel.selectedCategory?.rawValue ?? "NONE")")
+                        .bold()
+                        .foregroundColor(Color.primary)
+                        .padding(10)
+                        .background {
+                            Color.gray.opacity(0.5)
+                        }
+                        .cornerRadius(10)
+                }
+                
+                /*
                 Menu("Filter: \(viewModel.selectedCategory?.rawValue ?? "NONE")"){
                     ForEach(ProductViewModel.CategoryOption.allCases, id: \.self) { option in
                         Button(option.rawValue.capitalized) {
@@ -64,6 +107,7 @@ struct ProductView: View {
                         }
                     }
                 }
+                */
             }
         }
         .toolbar(content: {
