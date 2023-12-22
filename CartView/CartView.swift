@@ -17,7 +17,7 @@ struct CartView: View {
                     ProductCartCellViewBuilder(productDocument: document)
                         .environmentObject(viewModel)
                 }
-                Text("Total : \(viewModel.total)")
+                Text("Total : $\(viewModel.total)")
                     .bold()
                     .padding(10)
             }else{
