@@ -63,14 +63,8 @@ extension Query {
         return Int(truncating: snapshot.count)
     }
     
+    // addition of doucment count in cart collection then only this triggers and count is send on the publisher
     func addAggregateCountListener() -> (AnyPublisher<Int, Error> ,ListenerRegistration) {
-//        Task{
-//            do {
-//                let snapshot = try await self.count.getAggregation(source: .server)
-//            }catch {
-//
-//            }
-//        }
         
         let publisher = PassthroughSubject<Int, Error>()
 
@@ -85,7 +79,7 @@ extension Query {
         return (publisher.eraseToAnyPublisher(), listener)
     }
     
-    
+    // addition of document in the product collection then only then only this listner fires itself, and then products are sent on publisher
     func addSnapshotListener<T: Decodable>(as type: T.Type) -> (AnyPublisher<[T], Error> , ListenerRegistration) {
         
         

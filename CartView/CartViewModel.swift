@@ -11,7 +11,15 @@ import Combine
 @MainActor
 class CartViewModel : ObservableObject {
     @Published private(set) var userCartProducts: [UserCartProduct] = []
+    @Published var total: Int = 0
     private var cancellable = Set<AnyCancellable> ()
+    
+    func addPriceToTotal(price: Int){
+        total += price
+    }
+    func subtractPriceFromTotal(price: Int){
+        total -= price
+    }
     
     func addListenerForCart() {
         Task {

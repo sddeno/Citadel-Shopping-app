@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProductRow: View {
-   @StateObject var cartViewModel = CartViewModel()
+    @EnvironmentObject var cartViewModel: CartViewModel
     var product: Product
     var productDocument: UserCartProduct
     var body: some View {
@@ -43,15 +43,15 @@ struct ProductRow: View {
         VStack(alignment: .leading,spacing: 10){
             Text("\(product.title ?? "No Title")")
             Text("$\(product.price ?? 0)")
-            HStack{
-                Text(" Qnt: \(product.multipleSelectionCount ?? 0)")
-//                quantityPlusMinus(product: product)
-                Stepper("") {
-//                    cartManager.addToCart(product: product)
-                } onDecrement: {
-//                    cartManager.removeFromCart(product: product)
-                }
-            }
+//            HStack{
+//                Text(" Qnt: \(product.multipleSelectionCount ?? 0)")
+////                quantityPlusMinus(product: product)
+//                Stepper("") {
+////                    cartManager.addToCart(product: product)
+//                } onDecrement: {
+////                    cartManager.removeFromCart(product: product)
+//                }
+//            }
             .border(.white)
         }
     }
@@ -59,6 +59,7 @@ struct ProductRow: View {
     func binButton() -> some View {
         Button {
             cartViewModel.removeCartProduct(productId: String(productDocument.id))
+            cartViewModel.subtractPriceFromTotal(price: product.price ?? 0)
         } label: {
             Image("bin")
                 .resizable()

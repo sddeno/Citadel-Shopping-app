@@ -9,14 +9,17 @@ import SwiftUI
 
 struct CartView: View {
     @StateObject var viewModel = CartViewModel()
-    
     var body: some View {
         ScrollView{
             
             if viewModel.userCartProducts.count > 0 {
                 ForEach(viewModel.userCartProducts, id: \.id.self) { document in
                     ProductCartCellViewBuilder(productDocument: document)
+                        .environmentObject(viewModel)
                 }
+                Text("Total : \(viewModel.total)")
+                    .bold()
+                    .padding(10)
             }else{
                 Text("Your cart is empty")
             }
