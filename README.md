@@ -32,4 +32,8 @@ I created Citadel shopping navtive iOS app from scratch with the sole purpose of
 Screenshots
 
 
-![Simulator Screen Shot - iPhone 14 Pro - 2024-01-05 at 22 36 55](https://github.com/sddeno/Citadel-Shopping-app/assets/14980295/2c3c4651-1fc5-4bf2-919c-9674abad657d)
+
+
+https://github.com/sddeno/Citadel-Shopping-app/assets/14980295/eb314022-617c-49ba-9791-a026860797cf
+
+
