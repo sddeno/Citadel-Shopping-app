@@ -25,3 +25,11 @@ I created Citadel shopping navtive iOS app from scratch with the sole purpose of
   - adding Auth methods - Anonymous, Google, Email passowrd, (upcoming - Facebook and Apple)
   - Linking of email id or gmail id to authenticated anonlymous user
   - Razorpay Payment Integration
+
+
+
+
+Screenshots
+
+
+![Simulator Screen Shot - iPhone 14 Pro - 2024-01-05 at 22 36 55](https://github.com/sddeno/Citadel-Shopping-app/assets/14980295/2c3c4651-1fc5-4bf2-919c-9674abad657d)
