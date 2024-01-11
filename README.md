@@ -1,4 +1,4 @@
-I created Citadel shopping navtive iOS app from scratch with the sole purpose of facing and tackeling challenges that comes at every step of the way. Citadel is a complete Realtiem app. 
+I created Citadel shopping native iOS app from scratch with the sole purpose of facing and tackeling challenges that comes at every step of the way. Citadel is a complete Realtiem app. 
 
 1. Features 
 - Signup & Login  - with Google, Email password, as Anonymous
