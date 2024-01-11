@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		81012DC82A2647FC0041939B /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81012DC72A2647FC0041939B /* ProductView.swift */; };
 		81012DCB2A2649630041939B /* ProductManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81012DCA2A2649630041939B /* ProductManager.swift */; };
+		81073FB72B3DF43700C6A22E /* RazorPay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81073FB62B3DF43700C6A22E /* RazorPay.swift */; };
+		81073FBB2B3E887500C6A22E /* Razorpay.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81073F8D2B3D620000C6A22E /* Razorpay.xcframework */; };
+		81073FBC2B3E887500C6A22E /* Razorpay.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 81073F8D2B3D620000C6A22E /* Razorpay.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		81073FBF2B3ECCD000C6A22E /* RazorpayRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81073FBE2B3ECCD000C6A22E /* RazorpayRepresentable.swift */; };
 		810F29F92A2727F100CD8DB3 /* ProductListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F29F82A2727F100CD8DB3 /* ProductListView.swift */; };
 		8113EA532A2A2FBB00B7025A /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8113EA522A2A2FBB00B7025A /* TabbarView.swift */; };
 		8113EA562A2DB20000B7025A /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8113EA552A2DB20000B7025A /* FavoriteView.swift */; };
@@ -55,9 +59,26 @@
 		81FD8B432A1377230059920B /* SignInGoogleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD8B422A1377230059920B /* SignInGoogleHelper.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		81073FBD2B3E887500C6A22E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				81073FBC2B3E887500C6A22E /* Razorpay.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		81012DC72A2647FC0041939B /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
 		81012DCA2A2649630041939B /* ProductManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductManager.swift; sourceTree = "<group>"; };
+		81073F8D2B3D620000C6A22E /* Razorpay.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Razorpay.xcframework; path = ../../../../Downloads/Razorpay.xcframework; sourceTree = "<group>"; };
+		81073FB62B3DF43700C6A22E /* RazorPay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RazorPay.swift; sourceTree = "<group>"; };
+		81073FBE2B3ECCD000C6A22E /* RazorpayRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RazorpayRepresentable.swift; sourceTree = "<group>"; };
 		810F29F82A2727F100CD8DB3 /* ProductListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListView.swift; sourceTree = "<group>"; };
 		8113EA522A2A2FBB00B7025A /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
 		8113EA552A2DB20000B7025A /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
@@ -76,6 +97,7 @@
 		812036B62B2AF056007C8599 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		812036B82B2AFCBA007C8599 /* ProductCartCellViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCartCellViewBuilder.swift; sourceTree = "<group>"; };
 		812123AB2A110AF1009528C2 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		8161F8732B3C066500257B86 /* SwfitUIFirebaseBootcamp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwfitUIFirebaseBootcamp.entitlements; sourceTree = "<group>"; };
 		817CE55C2A10AC40005C42D7 /* SwfitUIFirebaseBootcamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwfitUIFirebaseBootcamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		817CE55F2A10AC40005C42D7 /* SwfitUIFirebaseBootcampApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwfitUIFirebaseBootcampApp.swift; sourceTree = "<group>"; };
 		817CE5612A10AC40005C42D7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81073FBB2B3E887500C6A22E /* Razorpay.xcframework in Frameworks */,
 				81FD8B3D2A1274410059920B /* GoogleSignInSwift in Frameworks */,
 				817CE5732A10D6BC005C42D7 /* FirebaseAnalyticsSwift in Frameworks */,
 				8113EA742A33368900B7025A /* FirebasePerformance in Frameworks */,
@@ -215,6 +238,7 @@
 			children = (
 				812036B12B299535007C8599 /* CartView.swift */,
 				812036B62B2AF056007C8599 /* CartViewModel.swift */,
+				81073FBE2B3ECCD000C6A22E /* RazorpayRepresentable.swift */,
 				812036B32B29960A007C8599 /* SubView */,
 			);
 			path = CartView;
@@ -250,6 +274,7 @@
 		817CE55E2A10AC40005C42D7 /* SwfitUIFirebaseBootcamp */ = {
 			isa = PBXGroup;
 			children = (
+				8161F8732B3C066500257B86 /* SwfitUIFirebaseBootcamp.entitlements */,
 				81FD8B3E2A1274CD0059920B /* Info.plist */,
 				817CE55F2A10AC40005C42D7 /* SwfitUIFirebaseBootcampApp.swift */,
 				817CE5612A10AC40005C42D7 /* ContentView.swift */,
@@ -281,6 +306,7 @@
 		817CE5742A10E238005C42D7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				81073F8D2B3D620000C6A22E /* Razorpay.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -360,6 +386,7 @@
 		81FD8B3F2A1278E40059920B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				81073FB62B3DF43700C6A22E /* RazorPay.swift */,
 				81FD8B402A1278F20059920B /* Utilities.swift */,
 			);
 			name = Utilities;
@@ -376,6 +403,7 @@
 				817CE5592A10AC40005C42D7 /* Frameworks */,
 				817CE55A2A10AC40005C42D7 /* Resources */,
 				8113EA6F2A322D7100B7025A /* ShellScript */,
+				81073FBD2B3E887500C6A22E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -498,6 +526,7 @@
 				8113EA632A2F569700B7025A /* ProductViewModel.swift in Sources */,
 				812036B72B2AF056007C8599 /* CartViewModel.swift in Sources */,
 				81012DC82A2647FC0041939B /* ProductView.swift in Sources */,
+				81073FB72B3DF43700C6A22E /* RazorPay.swift in Sources */,
 				81012DCB2A2649630041939B /* ProductManager.swift in Sources */,
 				812036B92B2AFCBA007C8599 /* ProductCartCellViewBuilder.swift in Sources */,
 				817CE5792A10E31E005C42D7 /* AuthenticationView.swift in Sources */,
@@ -508,6 +537,7 @@
 				8113EA5B2A2F555D00B7025A /* Query+EXT.swift in Sources */,
 				8113EA562A2DB20000B7025A /* FavoriteView.swift in Sources */,
 				818776662A10FAD600171EC9 /* SignInEmailView.swift in Sources */,
+				81073FBF2B3ECCD000C6A22E /* RazorpayRepresentable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,9 +663,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SwfitUIFirebaseBootcamp/SwfitUIFirebaseBootcamp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwfitUIFirebaseBootcamp/Preview Content\"";
+				DEVELOPMENT_TEAM = L24LN3R87B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwfitUIFirebaseBootcamp/Info.plist;
@@ -663,9 +695,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SwfitUIFirebaseBootcamp/SwfitUIFirebaseBootcamp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwfitUIFirebaseBootcamp/Preview Content\"";
+				DEVELOPMENT_TEAM = L24LN3R87B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwfitUIFirebaseBootcamp/Info.plist;

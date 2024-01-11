@@ -6,14 +6,11 @@
 //
 
 import SwiftUI
-
-
-
 struct ProductView: View {
     @StateObject private var viewModel = ProductViewModel()
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List{
                 ForEach(viewModel.productArray, id: \.self.id) { product in
                     ProductListView(product: product)
@@ -33,7 +30,6 @@ struct ProductView: View {
                     }
                 }
             }
-            .navigationBarTitle("Citadel")
         }
         .toolbar() {
             ToolbarItem(placement: .navigationBarLeading){

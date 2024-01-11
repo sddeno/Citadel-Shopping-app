@@ -20,10 +20,12 @@ struct ProductCartCellViewBuilder: View {
                     .environmentObject(viewModel)
             }
         }
-        .task{
-            self.product = try? await ProductManager.shared.getProduct(productId: String(productDocument.productId))
-            if let price = product?.price {
-                viewModel.addPriceToTotal(price: price)
+        .onFirestAppear {
+            Task{
+                self.product = try? await ProductManager.shared.getProduct(productId: String(productDocument.productId))
+                if let price = product?.price {
+                    viewModel.addPriceToTotal(price: price)
+                }
             }
         }
     }
