@@ -1,11 +1,11 @@
-I created Citadel shopping native iOS app from scratch with the sole purpose of facing and tackeling challenges that comes at every step of the way. Citadel is a complete Realtiem app. 
+I created Citadel shopping native iOS app from scratch with the sole purpose of facing and tackling challenges that comes at every step of the way. Citadel is a complete Realtiem app. 
 
 1. Features 
 - Signup & Login  - with Google, Email password, as Anonymous
-- Add email with google or email password if user is authenticated as anonymous
+- Add email with Google or Email password if user is authenticated as anonymous
 - Filter Products - loading based on selection of Filter 
-- Add to cart
-- Add to favourite
+- Add to Cart
+- Add to Favourite
 - User Profile
 - Checkout with Razorpay payment 
 
@@ -16,14 +16,14 @@ I created Citadel shopping native iOS app from scratch with the sole purpose of 
   - SwiftUI
   - Combine
   - Firebase Firestore
-  - Firebae Authentication Service
+  - Firebase Authentication Service
   - Concurrencies
 
 - Usecase Related -
   - Performance enhancement, i.e efficient loading of Products
-  - handeling count of products in cart and displaying on + - of product to Cart ( added listener on the snapshot of Cart collection ) 
-  - adding Auth methods - Anonymous, Google, Email passowrd, (upcoming - Facebook and Apple)
-  - Linking of email id or gmail id to authenticated anonlymous user
+  - Handeling count of products in cart and displaying on + - of product to Cart ( added listener on the snapshot of Cart collection ) 
+  - Adding Auth methods - Anonymous, Google, Email password, (upcoming - Facebook and Apple)
+  - Linking of email Id or gmail Id to authenticated anonymous user
   - Razorpay Payment Integration
 
 
