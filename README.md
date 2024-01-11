@@ -41,3 +41,19 @@ https://github.com/sddeno/Citadel-Shopping-app/assets/14980295/eb314022-617c-49b
 https://github.com/sddeno/Citadel-Shopping-app/assets/14980295/4d113a17-586d-448b-93dc-5f61ad8c6082
 
 
+
+https://github.com/sddeno/Citadel-Shopping-app/assets/14980295/25648998-6dbe-49eb-979c-87aa164d22f2
+
+
+
+
+https://github.com/sddeno/Citadel-Shopping-app/assets/14980295/4b6af9a8-17df-4b84-8d71-687de1f0c29e
+
+
+
+https://github.com/sddeno/Citadel-Shopping-app/assets/14980295/d2bcdcfa-6167-4d7b-9373-6eeb41cee7e9
+
+
+
+https://github.com/sddeno/Citadel-Shopping-app/assets/14980295/3309debf-8ee3-446b-a857-8b5da63ab73c
+
