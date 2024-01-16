@@ -16,6 +16,7 @@ My aim was to create an app which is reliable, scalable, performant so much to b
 #### User Profile
 #### Checkout with Razorpay payment
 
+<br><br><br><br><br>
 
 ## Key Features Description
 ### Authentication Options
@@ -35,7 +36,7 @@ My aim was to create an app which is reliable, scalable, performant so much to b
 - Wallets: Utilize popular wallets including Freecharge, Mobikwik, Airtel Payments Bank, Jio Money, and more.
 - PayLater Options: Experience flexibility with PayLater services such as Amazon Pay, ePayLater, Kotak Mahindra Bank, and others.
 
-
+<br><br><br>
 **Scalable Architecture**: Citadel  is engineered to scale effortlessly, ensuring a smooth experience for users, regardless of the demand. <br>
 **Reliability**: Trust in a stable and reliable platform that consistently delivers optimal performance. <br>
 **Comprehensive Authentication**: From personalized logins to anonymous browsing, Citadel  provides a flexible authentication system catering to diverse user preferences. <br>
