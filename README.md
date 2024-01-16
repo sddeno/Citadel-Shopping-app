@@ -1,4 +1,6 @@
-I created Citadel shopping native iOS app from scratch with the sole purpose of facing and tackling challenges that comes at every step of the way. Citadel is a complete Realtiem app. 
+I created Citadel shopping native iOS app from scratch with the sole purpose of facing and tackling challenges that comes at every step of the way. Citadel is a complete Realtime app. 
+My aim was to create an app which is reliable and scalable. Also focused on performance of the app involving fixing memory leaks, loading of UI as per user's demand and interaction.
+
 
 1. Features 
 - Signup & Login  - with Google, Email password, as Anonymous
