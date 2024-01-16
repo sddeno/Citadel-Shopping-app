@@ -48,13 +48,14 @@ My aim was to create an app which is reliable, scalable, performant so much to b
 
 # Learnings
 <br>
-## Technologies 
-  - Swift 5.0
-  - SwiftUI
-  - Combine
-  - Firebase Firestore
-  - Firebase Authentication Service
-  - Concurrencies
+
+## Technologies -
+  - Swift 5.0 <br>
+  - SwiftUI <br>
+  - Combine <br>
+  - Firebase Firestore <br>
+  - Firebase Authentication Service <br>
+  - Concurrencies <br>
 
 ## Usecase Related -
   - Performance enhancement, i.e efficient loading of Products
