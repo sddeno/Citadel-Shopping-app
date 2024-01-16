@@ -41,10 +41,10 @@ My aim was to create an app which is reliable, scalable, performant so much to b
 **Reliability**: Trust in a stable and reliable platform that consistently delivers optimal performance. <br>
 **Comprehensive Authentication**: From personalized logins to anonymous browsing, Citadel  provides a flexible authentication system catering to diverse user preferences. <br>
 **Complete Shopping Suite**: Explore, add to cart, mark favorites, and securely checkout—all in one seamless app. <br>
-
+<HR>
 
 <br><br><br><br><br>
-<HR>
+
 
 # Learnings
 <br>
