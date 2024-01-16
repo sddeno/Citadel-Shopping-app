@@ -1,19 +1,56 @@
-I created Citadel shopping native iOS app from scratch with the sole purpose of facing and tackling challenges that comes at every step of the way. Citadel is a complete Realtime app. 
-My aim was to create an app which is reliable and scalable. Also focused on performance of the app involving fixing memory leaks, loading of UI as per user's demand and interaction.
 
 
-1. Features 
-- Signup & Login  - with Google, Email password, as Anonymous
-- Add email with Google or Email password if user is authenticated as anonymous
-- Filter Products - loading based on selection of Filter 
-- Add to Cart
-- Add to Favourite
-- User Profile
-- Checkout with Razorpay payment 
+# Citadel
+
+## Overview
+I created Citadel shopping native iOS app from scratch with the sole purpose of facing and tackling challenges that comes at every step of the way. 
+Citadel  is a cutting-edge Native iOS App built for scalability, reliability, and peak performance. This robust application offers a seamless and intuitive user experience, providing users with powerful features to enhance their shopping journey.
+My aim was to create an app which is reliable, scalable, performant so much to be admissable for an high scaled business enterprise.
+
+## Key Features 
+### Signup & Login  - with Google, Email password, as Anonymous
+### Add email with Google or Email password if user is authenticated as anonymous
+### Filter Products - loading based on selection of Filter 
+### Add to Cart
+### Add to Favourite
+### User Profile
+### Checkout with Razorpay payment
 
 
-2. Learnings
-- Technologies 
+## Key Features Description
+### Authentication Options
+- Login with Google: Enjoy a quick and secure login using your Google credentials.
+- Email/Password Authentication: Create an account or log in with your email and password for a personalized experience.
+- Anonymous Login: For users valuing privacy, Citadel  allows seamless anonymous access without compromising functionality.
+
+## Shopping Experience
+- Product Discovery: Explore an extensive product catalog presented in a visually appealing and user-friendly interface.
+- Cart Management: Effortlessly add desired products to your shopping cart with a simple tap.
+- Favorites: Mark your favorite products and easily access them for a personalized shopping experience.
+
+## Secure Checkout
+- Razorpay Integration: Enjoy a secure and seamless checkout experience with Razorpay, supporting a variety of payment options.
+- Card Payments: Pay with confidence using major cards such as Visa, MasterCard, Rupay, and more.
+- Netbanking: Seamlessly complete transactions through various net banking options.
+- Wallets: Utilize popular wallets including Freecharge, Mobikwik, Airtel Payments Bank, Jio Money, and more.
+- PayLater Options: Experience flexibility with PayLater services such as Amazon Pay, ePayLater, Kotak Mahindra Bank, and others.
+
+
+### Scalable Architecture: Citadel  is engineered to scale effortlessly, ensuring a smooth experience for users, regardless of the demand.
+### Reliability: Trust in a stable and reliable platform that consistently delivers optimal performance.
+### Comprehensive Authentication: From personalized logins to anonymous browsing, Citadel  provides a flexible authentication system catering to diverse user preferences.
+### Complete Shopping Suite: Explore, add to cart, mark favorites, and securely checkout—all in one seamless app.
+
+
+
+
+
+
+
+
+
+# Learnings
+## Technologies 
   - Swift 5.0
   - SwiftUI
   - Combine
@@ -21,7 +58,7 @@ My aim was to create an app which is reliable and scalable. Also focused on perf
   - Firebase Authentication Service
   - Concurrencies
 
-- Usecase Related -
+## Usecase Related -
   - Performance enhancement, i.e efficient loading of Products
   - Handeling count of products in cart and displaying on + - of product to Cart ( added listener on the snapshot of Cart collection ) 
   - Adding Auth methods - Anonymous, Google, Email password, (upcoming - Facebook and Apple)
@@ -31,7 +68,7 @@ My aim was to create an app which is reliable and scalable. Also focused on perf
 
 
 
-Screenshots
+#Screenshots / Videos
 
 https://github.com/sddeno/Citadel-Shopping-app/assets/14980295/eb314022-617c-49ba-9791-a026860797cf
 
