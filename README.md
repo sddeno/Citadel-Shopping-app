@@ -65,9 +65,9 @@ My aim was to create an app which is reliable, scalable, performant so much to b
   - Razorpay Payment Integration
 
 
-<br>
+<br><br><br>
 
-#Screenshots / Videos
+# Screenshots / Videos
 
 https://github.com/sddeno/Citadel-Shopping-app/assets/14980295/eb314022-617c-49ba-9791-a026860797cf
 
