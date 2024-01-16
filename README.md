@@ -43,11 +43,7 @@ My aim was to create an app which is reliable, scalable, performant so much to b
 
 
 
-<br>
-
-
-
-
+<HR>
 
 # Learnings
 ## Technologies 
