@@ -36,14 +36,14 @@ My aim was to create an app which is reliable, scalable, performant so much to b
 - PayLater Options: Experience flexibility with PayLater services such as Amazon Pay, ePayLater, Kotak Mahindra Bank, and others.
 
 
-### Scalable Architecture: Citadel  is engineered to scale effortlessly, ensuring a smooth experience for users, regardless of the demand.
-### Reliability: Trust in a stable and reliable platform that consistently delivers optimal performance.
-### Comprehensive Authentication: From personalized logins to anonymous browsing, Citadel  provides a flexible authentication system catering to diverse user preferences.
-### Complete Shopping Suite: Explore, add to cart, mark favorites, and securely checkout—all in one seamless app.
+**Scalable Architecture**: Citadel  is engineered to scale effortlessly, ensuring a smooth experience for users, regardless of the demand.
+**Reliability**: Trust in a stable and reliable platform that consistently delivers optimal performance.
+**Comprehensive Authentication**: From personalized logins to anonymous browsing, Citadel  provides a flexible authentication system catering to diverse user preferences.
+**Complete Shopping Suite**: Explore, add to cart, mark favorites, and securely checkout—all in one seamless app.
 
 
 
-
+<br>
 
 
 
@@ -66,7 +66,7 @@ My aim was to create an app which is reliable, scalable, performant so much to b
   - Razorpay Payment Integration
 
 
-
+<br>
 
 #Screenshots / Videos
 
