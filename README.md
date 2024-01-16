@@ -42,10 +42,11 @@ My aim was to create an app which is reliable, scalable, performant so much to b
 **Complete Shopping Suite**: Explore, add to cart, mark favorites, and securely checkout—all in one seamless app. <br>
 
 
-
+<br><br><br><br><br>
 <HR>
 
 # Learnings
+<br>
 ## Technologies 
   - Swift 5.0
   - SwiftUI
